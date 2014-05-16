@@ -745,7 +745,14 @@ function handleTargetCommitted(target) {
     if (target.dataset.compositeKey) {
       // Keys with this attribute set send more than a single character
       // Like ".com" or "2nd" or (in Catalan) "l·l".
-      var compositeKey = target.dataset.compositeKey;
+      var compositeKey;
+      if ((isUpperCase || isUpperCaseLocked) &&
+          target.dataset.upperCompositeKey) {
+        compositeKey = target.dataset.upperCompositeKey;
+      }
+      else {
+        compositeKey = target.dataset.compositeKey;
+      }
       for (var i = 0; i < compositeKey.length; i++) {
         inputMethodManager.currentIMEngine.click(compositeKey.charCodeAt(i));
       }
