@@ -611,6 +611,15 @@ function modifyLayout(keyboardName) {
             row.splice(c, 0, commaKey);
           }
         }
+        // Add emoji
+        else {
+          space.ratio -= 1;
+            next++;
+          row.splice(c, 0, {
+            value: '☺',
+            className: 'alternate-indicator' }
+          );
+        }
 
         if (overwrites['.']) {
           var periodOverwrite = {
