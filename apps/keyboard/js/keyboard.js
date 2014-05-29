@@ -875,36 +875,50 @@ function showAlternatives(key) {
     }
   }
 
-  // Split alternatives
-  // If the alternatives are delimited by spaces, it means that one or more
-  // of them is more than a single character long.
-  if (alternatives.indexOf(' ') != -1) {
-    alternatives = alternatives.split(' ');
+  // Alternatives are a array of dictionaries but is accept a string as short
+  // form. For more information visit Bug 1011482.
+  if (typeof alternatives === 'string') {
+    // If the alternatives are delimited by spaces, it means that one or more
+    // of them is more than a single character long.
+    if (alternatives.indexOf(' ') != -1) {
+      alternatives = alternatives.split(' ');
 
-    // If there is just a single multi-character alternative, it will have
-    // trailing whitespace which we have to discard here.
-    if (alternatives.length === 2 && alternatives[1] === '')
-      alternatives.pop();
+      // If there is just a single multi-character alternative, it will have
+      // trailing whitespace which we have to discard here.
+      if (alternatives.length === 2 && alternatives[1] === '')
+        alternatives.pop();
 
-    if (needsCapitalization) {
-      for (var i = 0; i < alternatives.length; i++) {
-        if (isUpperCaseLocked) {
-          // Caps lock is on, so capitalize all the characters
-          alternatives[i] = alternatives[i].toLocaleUpperCase();
-        }
-        else {
-          // We're in uppercase, but not locked, so just capitalize 1st char.
-          alternatives[i] = alternatives[i][0].toLocaleUpperCase() +
-            alternatives[i].substring(1);
+      if (needsCapitalization) {
+        for (var i = 0; i < alternatives.length; i++) {
+          if (isUpperCaseLocked) {
+            // Caps lock is on, so capitalize all the characters
+            alternatives[i] = alternatives[i].toLocaleUpperCase();
+          }
+          else {
+            // We're in uppercase, but not locked, so just capitalize 1st char.
+            alternatives[i] = alternatives[i][0].toLocaleUpperCase() +
+              alternatives[i].substring(1);
+          }
         }
       }
+    } else {
+      // No spaces, so all of the alternatives are single characters
+      if (needsCapitalization) // Capitalize them all at once before splitting
+        alternatives = alternatives.toLocaleUpperCase();
+      alternatives = alternatives.split('');
     }
-  } else {
-    // No spaces, so all of the alternatives are single characters
-    if (needsCapitalization) // Capitalize them all at once before splitting
-      alternatives = alternatives.toLocaleUpperCase();
-    alternatives = alternatives.split('');
+
+    // Setup dictionary
+    for (var i = 0; i < alternatives.length; i++) {
+      if (alternatives[i].length > 1) {
+        alternatives[i] = { value: alternatives[i],
+          compositeKey: alternatives[i] };
+      } else {
+        alternatives[i] = { value: alternatives[i] };
+      }
+    }
   }
+  // We don't need to do anything if the alternatives already are a array.
 
   if (!alternatives.length)
     return;

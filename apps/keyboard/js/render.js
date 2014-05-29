@@ -618,20 +618,24 @@ const IMERender = (function() {
 
     // Build a key for each alternative
     altChars.forEach(function(alt, index) {
-      var dataset = alt.length == 1 ?
-        [
-          { 'key': 'keycode', 'value': alt.charCodeAt(0) },
-          { 'key': 'keycodeUpper', 'value': alt.toUpperCase().charCodeAt(0) }
-        ] :
-        [{'key': 'compositeKey', 'value': alt}];
+      var dataset;
+      if (alt.hasOwnProperty('compositeKey')) {
+        dataset = [{ 'key': 'compositekey', 'value': alt.compositeKey }];
+      } else {
+        dataset = [
+          { 'key': 'keycode', 'value': alt.value.charCodeAt(0) },
+          { 'key': 'keycodeUpper',
+            'value': alt.value.toUpperCase().charCodeAt(0) }
+        ];
+      }
 
       // Make each of these alternative keys 75% as wide as the key that
       // it is an alternative for, but adjust for the relative number of
       // characters in the original and the alternative
       var width = 0.75 * key.offsetWidth / keycharwidth * alt.length;
 
-      content.appendChild(buildKey(alt, '', width + 'px', dataset, null, null,
-        getAriaLabel(key)));
+      content.appendChild(buildKey(alt.value, '', width + 'px', dataset,
+          null, null, getAriaLabel(key)));
     });
     menu.innerHTML = '';
     menu.appendChild(content);
