@@ -454,7 +454,8 @@ function setUpperCase(upperCase, upperCaseLocked) {
 function resetUpperCase() {
   if (isUpperCase &&
       !isUpperCaseLocked &&
-      layoutManager.currentLayoutPage === LAYOUT_PAGE_DEFAULT) {
+      (layoutManager.currentLayoutPage === LAYOUT_PAGE_DEFAULT ||
+       layoutManager.currentLayoutPage === LAYOUT_PAGE_LATEX_GREEK)) {
     setUpperCase(false);
   }
 }
@@ -641,6 +642,18 @@ function handleTargetCommitted(target) {
   case ALTERNATE_LAYOUT:
     // Switch to numbers+symbols page
     fakeAppObject.setLayoutPage(layoutManager.LAYOUT_PAGE_SYMBOLS_I);
+    break;
+
+  case LATEX_GREEK_LAYOUT:
+    fakeAppObject.setLayoutPage(layoutManager.LAYOUT_PAGE_LATEX_GREEK);
+    break;
+
+  case LATEX_SYMBOLS_LAYOUT:
+    fakeAppObject.setLayoutPage(layoutManager.LAYOUT_PAGE_LATEX_SYMBOLS);
+    break;
+
+  case LATEX_FUNCTIONS_LAYOUT:
+    fakeAppObject.setLayoutPage(layoutManager.LAYOUT_PAGE_LATEX_FUNCTIONS);
     break;
 
   case KeyEvent.DOM_VK_ALT:
