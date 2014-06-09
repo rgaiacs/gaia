@@ -60,6 +60,9 @@ var keyboardName = null;
 const LAYOUT_PAGE_DEFAULT = 'Default';
 const LAYOUT_PAGE_SYMBOLS_I = 'Symbols_1';
 const LAYOUT_PAGE_SYMBOLS_II = 'Symbols_2';
+const LAYOUT_PAGE_LATEX_GREEK = 'LaTeX_Greek';
+const LAYOUT_PAGE_LATEX_SYMBOLS = 'LaTeX_Symbols';
+const LAYOUT_PAGE_LATEX_FUNCTIONS = 'LaTeX_Functions';
 
 // Layout page: what set of symbols should the keyboard display?
 var layoutPage = LAYOUT_PAGE_DEFAULT;
@@ -116,6 +119,9 @@ const ALTERNATE_LAYOUT = -2;
 const SWITCH_KEYBOARD = -3;
 const TOGGLE_CANDIDATE_PANEL = -4;
 const NO_OP = -5;
+const LATEX_GREEK_LAYOUT = -10;
+const LATEX_SYMBOLS_LAYOUT = -11;
+const LATEX_FUNCTIONS_LAYOUT = -12;
 
 const specialCodes = [
   KeyEvent.DOM_VK_BACK_SPACE,
@@ -460,10 +466,26 @@ function modifyLayout(keyboardName) {
       break;
   }
 
-  if (layoutPage === LAYOUT_PAGE_SYMBOLS_I) {
+  switch (layoutPage) {
+  case LAYOUT_PAGE_SYMBOLS_I:
     altLayoutName = 'alternateLayout';
-  } else if (layoutPage === LAYOUT_PAGE_SYMBOLS_II) {
+    break;
+
+  case LAYOUT_PAGE_SYMBOLS_II:
     altLayoutName = 'symbolLayout';
+    break;
+
+  case LAYOUT_PAGE_LATEX_GREEK:
+    altLayoutName = 'latexGreekLayout';
+    break;
+
+  case LAYOUT_PAGE_LATEX_SYMBOLS:
+    altLayoutName = 'latexSymbolsLayout';
+    break;
+
+  case LAYOUT_PAGE_LATEX_FUNCTIONS:
+    altLayoutName = 'latexFunctionsLayout';
+    break;
   }
 
   // Start with this base layout
@@ -473,6 +495,30 @@ function modifyLayout(keyboardName) {
   }
   else {
     layout = Keyboards[keyboardName];
+  }
+
+  var where_ctrl = false;
+  for (var r = 0, row; !where_ctrl && (row = layout.keys[r]); r += 1) {
+    for (var c = 0, ctrl; ctrl = layout.keys[r][c]; c += 1) {
+      if (ctrl.keyCode == KeyboardEvent.DOM_VK_CONTROL) {
+        where_ctrl = r;
+        break;
+      }
+    }
+  }
+  if (where_ctrl !== false) {
+    layout.keys[where_ctrl] = [
+      {'value': 'ABC', ratio: 2,
+        keyCode: BASIC_LAYOUT },
+      {'value': '12?', ratio: 2,
+        keyCode: ALTERNATE_LAYOUT },
+      {'value': 'αβγ', ratio: 2,
+        keyCode: LATEX_GREEK_LAYOUT },
+      {'value': '∑∏∫', ratio: 2,
+        keyCode: LATEX_SYMBOLS_LAYOUT },
+      {'value': 'sin', ratio: 2,
+        keyCode: LATEX_FUNCTIONS_LAYOUT }
+      ];
   }
 
   // Look for the space key in the layout. We're going to insert
@@ -736,7 +782,8 @@ function setUpperCase(upperCase, upperCaseLocked) {
 function resetUpperCase() {
   if (isUpperCase &&
       !isUpperCaseLocked &&
-      layoutPage === LAYOUT_PAGE_DEFAULT) {
+      (layoutPage === LAYOUT_PAGE_DEFAULT ||
+       layoutPage === LAYOUT_PAGE_LATEX_GREEK)) {
     setUpperCase(false);
   }
 }
@@ -1323,6 +1370,18 @@ function endPress(target, coords, touchId, hasCandidateScrolled) {
   case ALTERNATE_LAYOUT:
     // Switch to numbers+symbols page
     setLayoutPage(LAYOUT_PAGE_SYMBOLS_I);
+    break;
+
+  case LATEX_GREEK_LAYOUT:
+    setLayoutPage(LAYOUT_PAGE_LATEX_GREEK);
+    break;
+
+  case LATEX_SYMBOLS_LAYOUT:
+    setLayoutPage(LAYOUT_PAGE_LATEX_SYMBOLS);
+    break;
+
+  case LATEX_FUNCTIONS_LAYOUT:
+    setLayoutPage(LAYOUT_PAGE_LATEX_FUNCTIONS);
     break;
 
   case KeyEvent.DOM_VK_ALT:
