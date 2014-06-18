@@ -458,10 +458,14 @@ function modifyLayout(keyboardName) {
       break;
   }
 
-  if (layoutPage === LAYOUT_PAGE_SYMBOLS_I) {
+  switch (layoutPage) {
+  case LAYOUT_PAGE_SYMBOLS_I:
     altLayoutName = 'alternateLayout';
-  } else if (layoutPage === LAYOUT_PAGE_SYMBOLS_II) {
+    break;
+
+  case LAYOUT_PAGE_SYMBOLS_II:
     altLayoutName = 'symbolLayout';
+    break;
   }
 
   // Start with this base layout
@@ -472,6 +476,23 @@ function modifyLayout(keyboardName) {
   }
   else {
     layout = layoutLoader.getLayout(keyboardName);
+  }
+
+  var where_ctrl = false;
+  for (var r = 0, row; !where_ctrl && (row = layout.keys[r]); r += 1) {
+    for (var c = 0, ctrl; ctrl = layout.keys[r][c]; c += 1) {
+      if (ctrl.keyCode == KeyboardEvent.DOM_VK_CONTROL) {
+        where_ctrl = r;
+        break;
+      }
+    }
+  }
+  if (where_ctrl !== false) {
+    layout.keys[where_ctrl] = [
+      {'value': 'ABC', ratio: 5,
+        keyCode: BASIC_LAYOUT },
+      {'value': '12?', ratio: 5,
+        keyCode: ALTERNATE_LAYOUT }
   }
 
   // Look for the space key in the layout. We're going to insert
