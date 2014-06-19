@@ -1,7 +1,7 @@
 Keyboards.latex = {
   label: 'LaTeX',
   shortLabel: 'TeX',
-  imEngine: 'latin',
+  imEngine: 'latex',
   types: ['text', 'url', 'email'],
   menuLabel: 'LaTeX',
   alt: {
@@ -206,7 +206,7 @@ Keyboards.latex = {
       { value: '<math><mo>&lt;</mo></math>', compositeKey: '<' },
       { value: '<math><mo>&gt;</mo></math>', compositeKey: '>' },
       { value: '<math><mo>=</mo></math>', compositeKey: '=' },
-      { value: '<math><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math>', compositeKey: '| |' },
+      { value: '<math><mrow><mo>|</mo><mi>x</mi><mo>|</mo></mrow></math>', compositeKey: '||' },
       { value: '<math><mfrac><mi>x</mi><mi>y</mi></mfrac>', compositeKey: '\\frac{}{}' },
       { value: '<math><mo>×</mo></math>', compositeKey: '\\times' },
       { value: '<math><msubsup><mi>x</mi><mi>y</mi><mi>z</mi></msubsup></math>', compositeKey: '{}_{}^{}' },
@@ -223,7 +223,7 @@ Keyboards.latex = {
       { value: '<math><munderover><mi>x</mi><mi>y</mi><mi>z</mi></munderover></math>', compositeKey: '\\underset{}{\\overset{}{}}' },
       { value: '<math><mover><mi>x</mi><mi>y</mi></mover></math>', compositeKey: '\\overset{}{}' },
     ], [
-      { value: '<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></math>', compositeKey: '\\begin{matrix} \\end{matrix}', ratio: 1.5 },
+      { value: '<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></math>', compositeKey: '\\begin{matrix}\\end{matrix}', ratio: 1.5 },
       { value: '<math><mover><mi>x</mi><mo>^</mo></mover></math>', compositeKey: '\\hat{}' },
       { value: '<math><mo>ℕ</mo></math>', compositeKey: '\\mathbb{N}' },
       { value: '<math><mo>∏</mo></math>', compositeKey: '\\prod' },

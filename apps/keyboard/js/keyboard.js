@@ -1197,8 +1197,13 @@ function endPress(target, coords, touchId, hasCandidateScrolled) {
       else {
         compositeKey = target.dataset.compositeKey;
       }
-      for (var i = 0; i < compositeKey.length; i++) {
-        inputMethodManager.currentIMEngine.click(compositeKey.charCodeAt(i));
+
+      if (inputMethodManager.currentIMEngine.compositeKeyClick) {
+        inputMethodManager.currentIMEngine.compositeKeyClick(compositeKey);
+      } else {
+        for (var i = 0; i < compositeKey.length; i++) {
+          inputMethodManager.currentIMEngine.click(compositeKey.charCodeAt(i));
+        }
       }
     }
     else {
