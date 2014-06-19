@@ -500,8 +500,8 @@ function setUpperCase(upperCase, upperCaseLocked) {
 function resetUpperCase() {
   if (isUpperCase &&
       !isUpperCaseLocked &&
-      (layoutManager.currentLayoutPage === LAYOUT_PAGE_DEFAULT ||
-       layoutManager.currentLayoutPage === LAYOUT_PAGE_LATEX_GREEK)) {
+      (layoutManager.currentLayoutPage === layoutManager.LAYOUT_PAGE_DEFAULT ||
+       layoutManager.currentLayoutPage === layoutManager.LAYOUT_PAGE_LATEX_GREEK)) {
     setUpperCase(false);
   }
 }
@@ -1059,8 +1059,13 @@ function endPress(press, id) {
       else {
         compositeKey = target.dataset.compositeKey;
       }
-      for (var i = 0; i < compositeKey.length; i++) {
-        inputMethodManager.currentIMEngine.click(compositeKey.charCodeAt(i));
+
+      if (inputMethodManager.currentIMEngine.compositeKeyClick) {
+        inputMethodManager.currentIMEngine.compositeKeyClick(compositeKey);
+      } else {
+        for (var i = 0; i < compositeKey.length; i++) {
+          inputMethodManager.currentIMEngine.click(compositeKey.charCodeAt(i));
+        }
       }
     }
     else {
