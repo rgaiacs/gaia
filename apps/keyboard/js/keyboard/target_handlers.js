@@ -197,8 +197,12 @@ CompositeTargetHandler.prototype.commit = function() {
     compositeString = this.target.dataset.compositeKey;
   }
   var engine = this.app.inputMethodManager.currentIMEngine;
-  for (var i = 0; i < compositeString.length; i++) {
-    engine.click(compositeString.charCodeAt(i));
+  if (engine.compositeKeyClick) {
+    engine.compositeKeyClick(compositeString);
+  } else {
+    for (var i = 0; i < compositeString.length; i++) {
+      engine.click(compositeString.charCodeAt(i));
+    }
   }
 
   this.app.visualHighlightManager.hide(this.target);
@@ -222,6 +226,21 @@ PageSwitchingTargetHandler.prototype.commit = function() {
     case this.app.layoutManager.KEYCODE_ALTERNATE_LAYOUT:
       // Switch to numbers+symbols page
       page = this.app.layoutManager.LAYOUT_PAGE_SYMBOLS_I;
+      break;
+
+    case this.app.layoutManager.KEYCODE_LATEX_GREEK_LAYOUT:
+      // Switch to Greek letters page
+      page = this.app.layoutManager.LAYOUT_PAGE_LATEX_GREEK;
+      break;
+
+    case this.app.layoutManager.KEYCODE_LATEX_SYMBOLS_LAYOUT:
+      // Switch to math symbols page
+      page = this.app.layoutManager.LAYOUT_PAGE_LATEX_SYMBOLS;
+      break;
+
+    case this.app.layoutManager.KEYCODE_LATEX_FUNCTIONS_LAYOUT:
+      // Switch to math functions page
+      page = this.app.layoutManager.LAYOUT_PAGE_LATEX_FUNCTIONS;
       break;
 
     case KeyEvent.DOM_VK_ALT:

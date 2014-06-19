@@ -120,6 +120,9 @@ TargetHandlersManager.prototype._createHandlerForTarget = function(target) {
 
       case this.app.layoutManager.KEYCODE_BASIC_LAYOUT:
       case this.app.layoutManager.KEYCODE_ALTERNATE_LAYOUT:
+      case this.app.layoutManager.KEYCODE_LATEX_GREEK_LAYOUT:
+      case this.app.layoutManager.KEYCODE_LATEX_SYMBOLS_LAYOUT:
+      case this.app.layoutManager.KEYCODE_LATEX_FUNCTIONS_LAYOUT:
       case KeyEvent.DOM_VK_ALT:
         handler = new PageSwitchingTargetHandler(target, this.app);
         break;
