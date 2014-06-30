@@ -193,20 +193,6 @@ LayoutManager.prototype._updateModifiedLayout = function() {
       }
     }
   }
-  if (ctrlKeyFound !== false) {
-    layout.keys[ctrlKeyFound] = [
-      {'value': 'ABC', ratio: 2,
-        keyCode: this.KEYCODE_BASIC_LAYOUT },
-      {'value': '12&', ratio: 2,
-        keyCode: this.KEYCODE_ALTERNATE_LAYOUT },
-      {'value': 'αβγ', ratio: 2,
-        keyCode: this.KEYCODE_LATEX_GREEK_LAYOUT },
-      {'value': '∑∏∫', ratio: 2,
-        keyCode: this.KEYCODE_LATEX_SYMBOLS_LAYOUT },
-      {'value': 'sin', ratio: 2,
-        keyCode: this.KEYCODE_LATEX_FUNCTIONS_LAYOUT }
-      ];
-  }
 
   // Look for the space key in the layout. We're going to insert
   // meta keys before it or after it.
@@ -256,6 +242,8 @@ LayoutManager.prototype._updateModifiedLayout = function() {
   // ... make a copy of the entire keys array,
   layout.keys = [].concat(layout.keys);
   // ... and point row containing space key object to a new array,
+  var ctrlKeyRow = layout.keys[ctrlKeyFound] =
+    [].concat(layout.keys[ctrlKeyFound]);
   var spaceKeyRow = layout.keys[spaceKeyRowCount] =
     [].concat(layout.keys[spaceKeyRowCount]);
   // ... the space key object should be point to a new object too.
@@ -263,7 +251,32 @@ LayoutManager.prototype._updateModifiedLayout = function() {
     Object.create(layout.keys[spaceKeyRowCount][spaceKeyCount]);
 
   // Insert switch-to-symbol-and-back keys
-  if (!layout.disableAlternateLayout) {
+  if (ctrlKeyFound !== false) {
+    ctrlKeyRow.splice(0, 0,
+      {'value': 'ABC', ratio: 2,
+        keyCode: this.KEYCODE_BASIC_LAYOUT })
+    ctrlKeyRow.splice(1, 0,
+      {'value': '12&', ratio: 2,
+        keyCode: this.KEYCODE_ALTERNATE_LAYOUT });
+    ctrlKeyRow.splice(2, 0,
+      {'value': 'αβγ', ratio: 2,
+        keyCode: this.KEYCODE_LATEX_GREEK_LAYOUT });
+    ctrlKeyRow.splice(3, 0,
+      {'value': '∑∏∫', ratio: 2,
+        keyCode: this.KEYCODE_LATEX_SYMBOLS_LAYOUT });
+    ctrlKeyRow.splice(4, 0,
+      {'value': 'sin', ratio: 2,
+        keyCode: this.KEYCODE_LATEX_FUNCTIONS_LAYOUT });
+    ctrlKeyRow.pop();
+
+    spaceKeyObject.ratio -= 1.5;
+    spaceKeyRow.splice(spaceKeyCount, 0, {
+      value: '$x$',
+      compositeKey: '$$',
+      ratio: 1.5
+    });
+    spaceKeyCount++;
+  } else if (!layout.disableAlternateLayout) {
     spaceKeyObject.ratio -= 1.5;
     if (this.currentLayoutPage === this.LAYOUT_PAGE_DEFAULT) {
       spaceKeyRow.splice(spaceKeyCount, 0, {

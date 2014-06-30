@@ -99,8 +99,7 @@
    *
    */
   function handleReturn() {
-    // The following regex don't work for \underset{}{\overset{}{}}
-    var regex = /(}+|]|\|)({\\\w+|_|\^)?{?/;
+    var regex = /(}+|]|\||$)({\\\w+|_|\^)?[{$]?/;
     var match = fakeAppObject.inputContext.textAfterCursor.match(regex);
     if (match) {
       fakeAppObject.inputContext.setSelectionRange(fakeAppObject.inputContext.selectionStart +
@@ -188,7 +187,7 @@
     if (match) {
       numberSpacesBack = compositeKey.length - match[0].length;
     } else {
-      match = compositeKey.match(/[{\[|]/);
+      match = compositeKey.match(/[{\[|($$?)]/);
       if (match) {
         // If insert subscript or superscript maybe we want to skip the one of
         // the parameters.
