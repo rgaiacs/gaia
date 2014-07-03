@@ -197,7 +197,7 @@ LayoutManager.prototype._updateModifiedLayout = function() {
     layout.keys[ctrlKeyFound] = [
       {'value': 'ABC', ratio: 2,
         keyCode: this.KEYCODE_BASIC_LAYOUT },
-      {'value': '12?', ratio: 2,
+      {'value': '12&', ratio: 2,
         keyCode: this.KEYCODE_ALTERNATE_LAYOUT },
       {'value': 'αβγ', ratio: 2,
         keyCode: this.KEYCODE_LATEX_GREEK_LAYOUT },
