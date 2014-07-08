@@ -6,155 +6,155 @@ Keyboards.latex = {
   menuLabel: 'LaTeX',
   alt: {
     q: [
-    { value: '𝒞', compositeKey: '\\mathcal{q}', upperCompositeKey: '\\mathcal{Q}' },
-    { value: 'ℚ', compositeKey: '\\mathbb{q}', upperCompositeKey: '\\mathbb{Q}' },
-    { value: '𝔔', compositeKey: '\\mathfrak{q}', upperCompositeKey: '\\mathfrak{Q}' }
+    { value: '𝒶 ', compositeKey: '\\mathcal{q}', upperValue: '𝒞', upperCompositeKey: '\\mathcal{Q}' },
+    { value: '𝕠', compositeKey: '\\mathbb{q}', upperValue: 'ℚ', upperCompositeKey: '\\mathbb{Q}' },
+    { value: '𝔮', compositeKey: '\\mathfrak{q}', upperValue: '𝔔', upperCompositeKey: '\\mathfrak{Q}' }
     ],
     w: [
-    { value: '𝒲', compositeKey: '\\mathcal{w}', upperCompositeKey: '\\mathcal{W}' },
-    { value: '𝕎', compositeKey: '\\mathbb{w}', upperCompositeKey: '\\mathbb{W}' },
-    { value: '𝔚', compositeKey: '\\mathfrak{w}', upperCompositeKey: '\\mathfrak{W}' }
+    { value: '𝓌', compositeKey: '\\mathcal{w}', upperValue: '𝒲', upperCompositeKey: '\\mathcal{W}' },
+    { value: '𝕨', compositeKey: '\\mathbb{w}', upperValue: '𝕎', upperCompositeKey: '\\mathbb{W}' },
+    { value: '𝔴', compositeKey: '\\mathfrak{w}', upperValue: '𝔚', upperCompositeKey: '\\mathfrak{W}' }
     ],
     e: [
     { value: 'é' }, { value: 'è' }, { value: 'ê' }, { value: 'ë' },
     { value: 'ē' }, { value: 'ę' }, { value: '€' }, { value: 'ɛ' },
-    { value: 'ℰ', compositeKey: '\\mathcal{e}', upperCompositeKey: '\\mathcal{E}' },
-    { value: '𝔼', compositeKey: '\\mathbb{e}', upperCompositeKey: '\\mathbb{E}' },
-    { value: '𝔈', compositeKey: '\\mathfrak{e}', upperCompositeKey: '\\mathfrak{E}' }
+    { value: 'ℯ', compositeKey: '\\mathcal{e}', upperValue: 'ℰ', upperCompositeKey: '\\mathcal{E}' },
+    { value: '𝕖', compositeKey: '\\mathbb{e}', upperValue: '𝔼', upperCompositeKey: '\\mathbb{E}' },
+    { value: '𝔢', compositeKey: '\\mathfrak{e}', upperValue: '𝔈', upperCompositeKey: '\\mathfrak{E}' }
     ],
     r: [
-    { value: 'ℛ', compositeKey: '\\mathcal{r}', upperCompositeKey: '\\mathcal{R}' },
-    { value: 'ℝ', compositeKey: '\\mathbb{r}', upperCompositeKey: '\\mathbb{R}' },
-    { value: 'ℜ', compositeKey: '\\Re' }
+    { value: '𝓇', compositeKey: '\\mathcal{r}', upperValue: 'ℛ', upperCompositeKey: '\\mathcal{R}' },
+    { value: '𝕣', compositeKey: '\\mathbb{r}', upperValue: 'ℝ', upperCompositeKey: '\\mathbb{R}' },
+    { value: '𝔯', compositeKey: '\\mathfrak{r}', upperValue: 'ℜ', upperCompositeKey: '\\Re' }
     ],
     t: [
-    { value: '𝒯', compositeKey: '\\mathcal{t}', upperCompositeKey: '\\mathcal{T}' },
-    { value: '𝕋', compositeKey: '\\mathbb{t}', upperCompositeKey: '\\mathbb{T}' },
-    { value: '𝔗', compositeKey: '\\mathfrak{t}', upperCompositeKey: '\\mathfrak{T}' }
+    { value: '𝓉', compositeKey: '\\mathcal{t}', upperValue: '𝒯', upperCompositeKey: '\\mathcal{T}' },
+    { value: '𝕥', compositeKey: '\\mathbb{t}', upperValue: '𝕋', upperCompositeKey: '\\mathbb{T}' },
+    { value: '𝔱', compositeKey: '\\mathfrak{t}', upperValue: '𝔗', upperCompositeKey: '\\mathfrak{T}' }
     ],
     y: [
     { value: 'ÿ' }, { value: '¥' },
-    { value: '𝒴', compositeKey: '\\mathcal{y}', upperCompositeKey: '\\mathcal{Y}' },
-    { value: '𝕐', compositeKey: '\\mathbb{y}', upperCompositeKey: '\\mathbb{Y}' },
-    { value: '𝔜', compositeKey: '\\mathfrak{y}', upperCompositeKey: '\\mathfrak{Y}' }
+    { value: '𝓎', compositeKey: '\\mathcal{y}', upperValue: '𝒴', upperCompositeKey: '\\mathcal{Y}' },
+    { value: '𝕪', compositeKey: '\\mathbb{y}', upperValue: '𝕐', upperCompositeKey: '\\mathbb{Y}' },
+    { value: '𝔶', compositeKey: '\\mathfrak{y}', upperValue: '𝕐', upperCompositeKey: '\\mathfrak{Y}' }
     ],
     u: [
     { value: 'ü' }, { value: 'ú' }, { value: 'ù' }, { value: 'û' }, { value: 'ū' },
-    { value: '𝒰', compositeKey: '\\mathcal{u}', upperCompositeKey: '\\mathcal{U}' },
-    { value: '𝕌', compositeKey: '\\mathbb{u}', upperCompositeKey: '\\mathbb{U}' },
-    { value: '𝔘', compositeKey: '\\mathfrak{u}', upperCompositeKey: '\\mathfrak{U}' }
+    { value: '𝓊', compositeKey: '\\mathcal{u}', upperValue: '𝒰', upperCompositeKey: '\\mathcal{U}' },
+    { value: '𝕦', compositeKey: '\\mathbb{u}', upperValue: '𝕌', upperCompositeKey: '\\mathbb{U}' },
+    { value: '𝔲', compositeKey: '\\mathfrak{u}', upperValue: '𝔘', upperCompositeKey: '\\mathfrak{U}' }
     ],
     i: [
     { value: 'ï' }, { value: 'í' }, { value: 'ì' },
     { value: 'î' }, { value: 'ī' }, { value: 'į' },
-    { value: 'ℐ', compositeKey: '\\mathcal{i}', upperCompositeKey: '\\mathcal{I}' },
-    { value: '𝕀', compositeKey: '\\mathbb{i}', upperCompositeKey: '\\mathbb{I}' },
-    { value: 'ℑ', compositeKey: '\\Im' }
+    { value: '𝒾', compositeKey: '\\mathcal{i}', upperValue: 'ℐ', upperCompositeKey: '\\mathcal{I}' },
+    { value: '𝕚', compositeKey: '\\mathbb{i}', upperValue: '𝕀', upperCompositeKey: '\\mathbb{I}' },
+    { value: '𝔦', compositeKey: '\\mathfrak{i}', upperValue: 'ℑ', upperCompositeKey: '\\Im' }
     ],
     o: [
     { value: 'ö' }, { value: 'ó' }, { value: 'ò' }, { value: 'ô' },
     { value: 'ō' }, { value: 'œ' }, { value: 'ø' }, { value: 'ɵ' },
-    { value: '𝒪', compositeKey: '\\mathcal{o}', upperCompositeKey: '\\mathcal{O}' },
-    { value: '𝕆', compositeKey: '\\mathbb{o}', upperCompositeKey: '\\mathbb{O}' },
-    { value: '𝔒', compositeKey: '\\mathfrak{o}', upperCompositeKey: '\\mathfrak{O}' }
+    { value: 'ℴ', compositeKey: '\\mathcal{o}', upperValue: '𝒪', upperCompositeKey: '\\mathcal{O}' },
+    { value: '𝕠', compositeKey: '\\mathbb{o}', upperValue: '𝕆', upperCompositeKey: '\\mathbb{O}' },
+    { value: '𝔬', compositeKey: '\\mathfrak{o}', upperValue: '𝔒', upperCompositeKey: '\\mathfrak{O}' }
     ],
     p: [
-    { value: '𝒫', compositeKey: '\\mathcal{p}', upperCompositeKey: '\\mathcal{P}' },
-    { value: 'ℙ', compositeKey: '\\mathbb{p}', upperCompositeKey: '\\mathbb{P}' },
-    { value: '𝔓', compositeKey: '\\mathfrak{p}', upperCompositeKey: '\\mathfrak{P}' }
+    { value: '𝓅', compositeKey: '\\mathcal{p}', upperValue: '𝒫', upperCompositeKey: '\\mathcal{P}' },
+    { value: '𝕡', compositeKey: '\\mathbb{p}', upperValue: 'ℙ', upperCompositeKey: '\\mathbb{P}' },
+    { value: '𝔮', compositeKey: '\\mathfrak{p}', upperValue: '𝔓', upperCompositeKey: '\\mathfrak{P}' }
     ],
     a: [
     { value: 'á' }, { value: 'à' }, { value: 'â' }, { value: 'ä' },
     { value: 'å' }, { value: 'ã' }, { value: 'ā' }, { value: 'æ' },
-    { value: '𝒜', compositeKey: '\\mathcal{a}', upperCompositeKey: '\\mathcal{A}' },
-    { value: '𝔸', compositeKey: '\\mathbb{a}', upperCompositeKey: '\\mathbb{A}' },
-    { value: '𝔄', compositeKey: '\\mathfrak{a}', upperCompositeKey: '\\mathfrak{A}' }
+    { value: '𝒶', compositeKey: '\\mathcal{a}', upperValue: '𝒜', upperCompositeKey: '\\mathcal{A}' },
+    { value: '𝕒', compositeKey: '\\mathbb{a}', upperValue: '𝔸', upperCompositeKey: '\\mathbb{A}' },
+    { value: '𝔞', compositeKey: '\\mathfrak{a}', upperValue: '𝔄', upperCompositeKey: '\\mathfrak{A}' }
     ],
     s: [
     { value: 'ß' }, { value: 'ś' }, { value: 'š' }, { value: '$' },
-    { value: '𝒮', compositeKey: '\\mathcal{s}', upperCompositeKey: '\\mathcal{S}' },
-    { value: '𝕊', compositeKey: '\\mathbb{s}', upperCompositeKey: '\\mathbb{S}' },
-    { value: '𝔖', compositeKey: '\\mathfrak{s}', upperCompositeKey: '\\mathfrak{S}' }
+    { value: '𝒷', compositeKey: '\\mathcal{s}', upperValue: '𝒮', upperCompositeKey: '\\mathcal{S}' },
+    { value: '𝕤', compositeKey: '\\mathbb{s}', upperValue: '𝕊', upperCompositeKey: '\\mathbb{S}' },
+    { value: '𝔰', compositeKey: '\\mathfrak{s}', upperValue: '𝔖', upperCompositeKey: '\\mathfrak{S}' }
     ],
     S: [
     { value: 'Ś' }, { value: 'Š' }, { value: '$' },
-    { value: '𝒮', compositeKey: '\\mathcal{s}', upperCompositeKey: '\\mathcal{S}' },
-    { value: '𝕊', compositeKey: '\\mathbb{s}', upperCompositeKey: '\\mathbb{S}' },
-    { value: '𝔖', compositeKey: '\\mathfrak{s}', upperCompositeKey: '\\mathfrak{S}' }
+    { value: '𝓈', compositeKey: '\\mathcal{s}', upperValue: '𝒮', upperCompositeKey: '\\mathcal{S}' },
+    { value: '𝕤', compositeKey: '\\mathbb{s}', upperValue: '𝕊', upperCompositeKey: '\\mathbb{S}' },
+    { value: '𝔰', compositeKey: '\\mathfrak{s}', upperValue: '𝔖', upperCompositeKey: '\\mathfrak{S}' }
     ],
     d: [
-    { value: '𝒟', compositeKey: '\\mathcal{d}', upperCompositeKey: '\\mathcal{D}' },
-    { value: '𝔻', compositeKey: '\\mathbb{d}', upperCompositeKey: '\\mathbb{D}' },
-    { value: '𝔇', compositeKey: '\\mathfrak{d}', upperCompositeKey: '\\mathfrak{D}' }
+    { value: '𝒹', compositeKey: '\\mathcal{d}', upperValue: '𝒟', upperCompositeKey: '\\mathcal{D}' },
+    { value: '𝕕', compositeKey: '\\mathbb{d}', upperValue: '𝔻', upperCompositeKey: '\\mathbb{D}' },
+    { value: '𝔡', compositeKey: '\\mathfrak{d}', upperValue: '𝔇', upperCompositeKey: '\\mathfrak{D}' }
     ],
     f: [
-    { value: 'ℱ', compositeKey: '\\mathcal{f}', upperCompositeKey: '\\mathcal{F}' },
-    { value: '𝔽', compositeKey: '\\mathbb{f}', upperCompositeKey: '\\mathbb{F}' },
-    { value: '𝔉', compositeKey: '\\mathfrak{f}', upperCompositeKey: '\\mathfrak{F}' }
+    { value: '𝒻', compositeKey: '\\mathcal{f}', upperValue: 'ℱ', upperCompositeKey: '\\mathcal{F}' },
+    { value: '𝕗', compositeKey: '\\mathbb{f}', upperValue: '𝔽', upperCompositeKey: '\\mathbb{F}' },
+    { value: '𝔣', compositeKey: '\\mathfrak{f}', upperValue: '𝔉', upperCompositeKey: '\\mathfrak{F}' }
     ],
     g: [
-    { value: '𝒢', compositeKey: '\\mathcal{g}', upperCompositeKey: '\\mathcal{G}' },
-    { value: '𝔾', compositeKey: '\\mathbb{g}', upperCompositeKey: '\\mathbb{G}' },
-    { value: '𝔊', compositeKey: '\\mathfrak{g}', upperCompositeKey: '\\mathfrak{G}' }
+    { value: 'ℊ', compositeKey: '\\mathcal{g}', upperValue: '𝒢', upperCompositeKey: '\\mathcal{G}' },
+    { value: '𝕘', compositeKey: '\\mathbb{g}', upperValue: '𝔾', upperCompositeKey: '\\mathbb{G}' },
+    { value: '𝔤', compositeKey: '\\mathfrak{g}', upperValue: '𝔊', upperCompositeKey: '\\mathfrak{G}' }
     ],
     h: [
-    { value: 'ℋ', compositeKey: '\\mathcal{h}', upperCompositeKey: '\\mathcal{H}' },
-    { value: 'ℍ', compositeKey: '\\mathbb{h}', upperCompositeKey: '\\mathbb{H}' },
-    { value: 'ℌ', compositeKey: '\\mathfrak{h}', upperCompositeKey: '\\mathfrak{H}' }
+    { value: '𝒽', compositeKey: '\\mathcal{h}', upperValue: 'ℋ', upperCompositeKey: '\\mathcal{H}' },
+    { value: '𝕙', compositeKey: '\\mathbb{h}', upperValue: 'ℍ', upperCompositeKey: '\\mathbb{H}' },
+    { value: '𝔥', compositeKey: '\\mathfrak{h}', upperValue: 'ℌ', upperCompositeKey: '\\mathfrak{H}' }
     ],
     j: [
-    { value: '𝒥', compositeKey: '\\mathcal{j}', upperCompositeKey: '\\mathcal{J}' },
-    { value: '𝕁', compositeKey: '\\mathbb{j}', upperCompositeKey: '\\mathbb{J}' },
-    { value: '𝔍', compositeKey: '\\mathfrak{j}', upperCompositeKey: '\\mathfrak{J}' }
+    { value: '𝒿', compositeKey: '\\mathcal{j}', upperValue: '𝒥', upperCompositeKey: '\\mathcal{J}' },
+    { value: '𝕛', compositeKey: '\\mathbb{j}', upperValue: '𝕁', upperCompositeKey: '\\mathbb{J}' },
+    { value: '𝔧', compositeKey: '\\mathfrak{j}', upperValue: '𝔍', upperCompositeKey: '\\mathfrak{J}' }
     ],
     k: [
-    { value: '𝒦', compositeKey: '\\mathcal{k}', upperCompositeKey: '\\mathcal{K}' },
-    { value: '𝕂', compositeKey: '\\mathbb{k}', upperCompositeKey: '\\mathbb{K}' },
-    { value: '𝔎', compositeKey: '\\mathfrak{k}', upperCompositeKey: '\\mathfrak{K}' }
+    { value: '𝓀', compositeKey: '\\mathcal{k}', upperValue: '𝒦', upperCompositeKey: '\\mathcal{K}' },
+    { value: '𝕜', compositeKey: '\\mathbb{k}', upperValue: '𝕂', upperCompositeKey: '\\mathbb{K}' },
+    { value: '𝔨', compositeKey: '\\mathfrak{k}', upperValue: '𝔎', upperCompositeKey: '\\mathfrak{K}' }
     ],
     l: [
     { value: 'ł' }, { value: '£' },
-    { value: 'ℒ', compositeKey: '\\mathcal{l}', upperCompositeKey: '\\mathcal{L}' },
-    { value: '𝕃', compositeKey: '\\mathbb{l}', upperCompositeKey: '\\mathbb{L}' },
-    { value: '𝔏', compositeKey: '\\mathfrak{l}', upperCompositeKey: '\\mathfrak{L}' }
+    { value: '𝓁', compositeKey: '\\mathcal{l}', upperValue: 'ℒ', upperCompositeKey: '\\mathcal{L}' },
+    { value: '𝕝', compositeKey: '\\mathbb{l}', upperValue: '𝕃', upperCompositeKey: '\\mathbb{L}' },
+    { value: '𝔩', compositeKey: '\\mathfrak{l}', upperValue: '𝔏', upperCompositeKey: '\\mathfrak{L}' }
     ],
     z: [
     { value: 'ž' }, { value: 'ź' }, { value: 'ż' },
-    { value: '𝒵', compositeKey: '\\mathcal{z}', upperCompositeKey: '\\mathcal{Z}' },
-    { value: 'ℤ', compositeKey: '\\mathbb{z}', upperCompositeKey: '\\mathbb{Z}' },
-    { value: 'ℨ', compositeKey: '\\mathfrak{z}', upperCompositeKey: '\\mathfrak{Z}' }
+    { value: '𝓏', compositeKey: '\\mathcal{z}', upperValue: '𝒵', upperCompositeKey: '\\mathcal{Z}' },
+    { value: '𝕫', compositeKey: '\\mathbb{z}', upperValue: 'ℤ', upperCompositeKey: '\\mathbb{Z}' },
+    { value: '𝔷', compositeKey: '\\mathfrak{z}', upperValue: 'ℨ', upperCompositeKey: '\\mathfrak{Z}' }
     ],
     x: [
-    { value: '𝒳', compositeKey: '\\mathcal{x}', upperCompositeKey: '\\mathcal{X}' },
-    { value: '𝕏', compositeKey: '\\mathbb{x}', upperCompositeKey: '\\mathbb{X}' },
-    { value: '𝔛', compositeKey: '\\mathfrak{x}', upperCompositeKey: '\\mathfrak{X}' }
+    { value: '𝓍', compositeKey: '\\mathcal{x}', upperValue: '𝒳', upperCompositeKey: '\\mathcal{X}' },
+    { value: '𝕩', compositeKey: '\\mathbb{x}', upperValue: '𝕏', upperCompositeKey: '\\mathbb{X}' },
+    { value: '𝔵', compositeKey: '\\mathfrak{x}', upperValue: '𝔛', upperCompositeKey: '\\mathfrak{X}' }
     ],
     c: [
     { value: 'ç' }, { value: 'ć' }, { value: 'č' },
-    { value: '𝒞', compositeKey: '\\mathcal{c}', upperCompositeKey: '\\mathcal{C}' },
-    { value: 'ℂ', compositeKey: '\\mathbb{c}', upperCompositeKey: '\\mathbb{C}' },
-    { value: 'ℭ', compositeKey: '\\mathfrak{c}', upperCompositeKey: '\\mathfrak{C}' }
+    { value: '𝒸', compositeKey: '\\mathcal{c}', upperValue: '𝒞', upperCompositeKey: '\\mathcal{C}' },
+    { value: '𝕔', compositeKey: '\\mathbb{c}', upperValue: 'ℂ', upperCompositeKey: '\\mathbb{C}' },
+    { value: '𝔠', compositeKey: '\\mathfrak{c}', upperValue: 'ℭ', upperCompositeKey: '\\mathfrak{C}' }
     ],
     v: [
-    { value: '𝒱', compositeKey: '\\mathcal{v}', upperCompositeKey: '\\mathcal{V}' },
-    { value: '𝕍', compositeKey: '\\mathbb{v}', upperCompositeKey: '\\mathbb{V}' },
-    { value: '𝔙', compositeKey: '\\mathfrak{v}', upperCompositeKey: '\\mathfrak{V}' }
+    { value: '𝓋', compositeKey: '\\mathcal{v}', upperValue: '𝒱', upperCompositeKey: '\\mathcal{V}' },
+    { value: '𝕧', compositeKey: '\\mathbb{v}', upperValue: '𝕍', upperCompositeKey: '\\mathbb{V}' },
+    { value: '𝔳', compositeKey: '\\mathfrak{v}', upperValue: '𝔙', upperCompositeKey: '\\mathfrak{V}' }
     ],
     b: [
-    { value: 'ℬ', compositeKey: '\\mathcal{b}', upperCompositeKey: '\\mathcal{B}' },
-    { value: '𝔹', compositeKey: '\\mathbb{b}', upperCompositeKey: '\\mathbb{B}' },
-    { value: '𝔅', compositeKey: '\\mathfrak{b}', upperCompositeKey: '\\mathfrak{B}' }
+    { value: '𝒷', compositeKey: '\\mathcal{b}', upperValue: 'ℬ', upperCompositeKey: '\\mathcal{B}' },
+    { value: '𝕓', compositeKey: '\\mathbb{b}', upperValue: '𝔹', upperCompositeKey: '\\mathbb{B}' },
+    { value: '𝔟', compositeKey: '\\mathfrak{b}', upperValue: '𝔅', upperCompositeKey: '\\mathfrak{B}' }
     ],
     n: [
     { value: 'ñ' }, { value: 'ń' },
-    { value: '𝒩', compositeKey: '\\mathcal{n}', upperCompositeKey: '\\mathcal{N}' },
-    { value: 'ℕ', compositeKey: '\\mathbb{n}', upperCompositeKey: '\\mathbb{N}' },
-    { value: '𝔑', compositeKey: '\\mathfrak{n}', upperCompositeKey: '\\mathfrak{N}' }
+    { value: '𝓃', compositeKey: '\\mathcal{n}', upperValue: '𝒩', upperCompositeKey: '\\mathcal{N}' },
+    { value: '𝕟', compositeKey: '\\mathbb{n}', upperValue: 'ℕ', upperCompositeKey: '\\mathbb{N}' },
+    { value: '𝔫', compositeKey: '\\mathfrak{n}', upperValue: '𝔑', upperCompositeKey: '\\mathfrak{N}' }
     ],
     m: [
-    { value: 'ℳ', compositeKey: '\\mathcal{m}', upperCompositeKey: '\\mathcal{M}' },
-    { value: '𝕄', compositeKey: '\\mathbb{m}', upperCompositeKey: '\\mathbb{M}' },
-    { value: '𝔐', compositeKey: '\\mathfrak{m}', upperCompositeKey: '\\mathfrak{M}' }
+    { value: '𝓂', compositeKey: '\\mathcal{m}', upperValue: 'ℳ', upperCompositeKey: '\\mathcal{M}' },
+    { value: '𝕞', compositeKey: '\\mathbb{m}', upperValue: '𝕄', upperCompositeKey: '\\mathbb{M}' },
+    { value: '𝔪', compositeKey: '\\mathfrak{m}', upperValue: '𝔐', upperCompositeKey: '\\mathfrak{M}' }
     ],
     '.': ',?!;:'
   },
