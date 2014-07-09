@@ -116,26 +116,29 @@
    */
   function handleBackspace() {
     var regex = /\\\w+/;
+    var backspaceSize = 1;
+
     var wordsBeforeCursor = fakeAppObject.inputContext.textBeforeCursor.split(' ');
     var lastWord = wordsBeforeCursor[wordsBeforeCursor.length - 1];
-    var backspaceSize = 1;
+    // Normally people don't use space at the begin of math environment.
+    // If we are at the begin or end of an math environment let split the word.
+    lastWord = lastWord.split('$');
+    lastWord = lastWord[lastWord.length - 1];
 
     // If the text before cursor ends with white space the length of last word
     // is 0 and we don't need to do anything.
     if (lastWord.length > 0) {
-      var startWithSlash = (lastWord[0] === '\\');
+      switch (lastWord[0]) {
+        case '\\':
+          // For '\foo\bar' we want to only remove '\bar'.
+          var wordsWithSlash = lastWord.split('\\');
+          lastWord = '\\' + wordsWithSlash[wordsWithSlash.length - 1];
 
-      if (startWithSlash) {
-        // For '\foo\bar' we want to only remove '\bar'.
-        var wordsWithSlash = lastWord.split('\\');
-        lastWord = '\\' + wordsWithSlash[wordsWithSlash.length - 1];
-      }
-
-      // For '\foo{bar}' we wanto to only remove the last character.
-      var hasBracket = lastWord.search('{');
-
-      if (startWithSlash && hasBracket == -1) {
-        backspaceSize = lastWord.length;
+          // For '\foo{bar}' we want to only remove the last character.
+          if (lastWord.search('{') == -1) {
+            backspaceSize = lastWord.length;
+          }
+          break;
       }
     }
 
