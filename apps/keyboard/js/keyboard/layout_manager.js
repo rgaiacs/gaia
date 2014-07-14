@@ -262,7 +262,7 @@ LayoutManager.prototype._updateModifiedLayout = function() {
       {'value': 'αβγ', ratio: 2,
         keyCode: this.KEYCODE_LATEX_GREEK_LAYOUT });
     ctrlKeyRow.splice(3, 0,
-      {'value': '∑∏∫', ratio: 2,
+      {'value': '∫∇∑', ratio: 2,
         keyCode: this.KEYCODE_LATEX_SYMBOLS_LAYOUT });
     ctrlKeyRow.splice(4, 0,
       {'value': 'sin', ratio: 2,
