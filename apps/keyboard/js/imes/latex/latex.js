@@ -186,20 +186,27 @@
       startingNewToken = false;
     }
 
-    var match = compositeKey.match(/\\begin{\w+}/);
-    if (match) {
-      numberSpacesBack = compositeKey.length - match[0].length;
+    // For '$$' and '||' the place holder is between the symbols.
+    if (compositeKey[0] === '$' || compositeKey[0] === '|') {
+      numberSpacesBack = compositeKey.length / 2;
     } else {
-      match = compositeKey.match(/[{\[|($$?)]/);
+      // For LaTeX environments
+      var match = compositeKey.match(/\\begin{\w+}/);
       if (match) {
-        // If insert subscript or superscript maybe we want to skip the one of
-        // the parameters.
-        if (match.index === 0 && match[0] === '{' && !startingNewToken) {
-          compositeKey = compositeKey.substr(2);
-          numberSpacesBack = compositeKey.length - compositeKey.search('{') - 1;
-        }
-        else {
-          numberSpacesBack = compositeKey.length - match.index - 1;
+        numberSpacesBack = compositeKey.length - match[0].length;
+      } else {
+        // For LaTeX commands
+        match = compositeKey.match(/[}\]]/);
+        if (match) {
+          // If insert subscript or superscript maybe we want to skip the one of
+          // the parameters.
+          if (match.index === 0 && match[0] === '{' && !startingNewToken) {
+            compositeKey = compositeKey.substr(2);
+            numberSpacesBack = compositeKey.length - compositeKey.search('{') - 1;
+          }
+          else {
+            numberSpacesBack = compositeKey.length - match.index;
+          }
         }
       }
     }
