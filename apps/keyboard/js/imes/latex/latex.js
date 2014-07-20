@@ -99,11 +99,31 @@
    *
    */
   function handleReturn() {
-    var regex = /(}+|]|\||$)({\\\w+|_|\^)?[{$]?/;
-    var match = fakeAppObject.inputContext.textAfterCursor.match(regex);
+    var regex = /(}|]|\||$)/;
+    var selectionRange;
+    //var regex = /(}+|]|\||$)({\\\w+|_|\^)?[{$]?/;
+    var textAfterCursor = fakeAppObject.inputContext.textAfterCursor;
+    var match = textAfterCursor.match(regex);
     if (match) {
+      // If match start at the begin of textAfterCursor we need to do something
+      // otherwise the cursor will not move.
+      if (match.index === 0) {
+        if (textAfterCursor.length === 1) {
+          selectionRange = 1;
+        } else {
+          if (textAfterCursor[1] === ' ') {
+            selectionRange = 2;
+          } else {
+            textAfterCursor = textAfterCursor.slice(1);
+            match = textAfterCursor.match(regex);
+            selectionRange = 1 + match.index;
+          }
+        }
+      } else {
+        selectionRange = match.index;
+      }
       fakeAppObject.inputContext.setSelectionRange(fakeAppObject.inputContext.selectionStart +
-          match.index + match[0].length, 0);
+          selectionRange, 0);
     } else {
       keyboard.sendKey(RETURN);
     }
