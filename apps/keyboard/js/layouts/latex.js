@@ -206,14 +206,15 @@ Keyboards.latex = {
         { value: '5' } , { value: '6' }, { value: '7' } , { value: '8' },
         { value: '9' }, { value: '0' }
       ], [
-        { value: '@', hidden: ['email'] }, { value: '#' }, { value: '$' },
-        { value: '%' }, { value: '&' } , { value: '*' }, { value: '-' },
-        { value: '+' }, { value: '(' }, { value: ')' },
-        { value: '_', visible: ['email'] }
+        { value: '@' }, { value: '#' },
+        { value: '$', className: 'alternate-indicator' }, { value: '&' },
+        { value: '*' }, { value: '-' }, { value: '_' }, { value: '/' },
+        { value: '(' }, { value: ')' }
       ], [
         { value: 'ALT', ratio: 1.5, keyCode: KeyEvent.DOM_VK_ALT },
-        { value: '!' }, { value: '\"' }, { value: "'" }, { value: ':' },
-        { value: ';' }, { value: '/' }, { value: '?' },
+        { value: '+' }, { value: ':' },
+        { value: ';' }, { value: '"' },
+        { value: '\'' }, { value: '?' }, { value: '!' },
         { value: '⌫', ratio: 1.5, keyCode: KeyEvent.DOM_VK_BACK_SPACE }
       ], [
         { value: '&nbsp', ratio: 8, keyCode: KeyboardEvent.DOM_VK_SPACE },
@@ -227,18 +228,18 @@ Keyboards.latex = {
         { value: 'CTRL', ratio: 10, keyCode: KeyboardEvent.DOM_VK_CONTROL }
       ],
       [
-        { value: '`' }, { value: '~' }, { value: '_' }, { value: '^' },
-        { value: '±' }, { value: '|' }, { value: '[' }, { value: ']' },
+        { value: '¥' }, { value: '€' }, { value: '£' }, { value: '¢' },
+        { value: '₠' }, { value: '%' }, { value: '©' }, { value: '®' },
+        { value: '|' }, { value: '\\' }
+      ], [
+        { value: '~' }, { value: '°C', compositeKey: '°C' },
+        { value: '°F', compositeKey: '°F' }, { value: '°' },
+        { value: '<' }, { value: '>' }, { value: '[' }, { value: ']' },
         { value: '{' }, { value: '}' }
       ], [
-        { value: '°' }, { value: '²' }, { value: '³' }, { value: '©' },
-        { value: '®' }, { value: '§' }, { value: '<' }, { value: '>' },
-        { value: '«' }, { value: '»' }
-      ],
-      [
         { value: 'ALT', ratio: 1.5, keyCode: KeyEvent.DOM_VK_ALT },
-        { value: '¥' }, { value: '€' }, { value: '£' }, { value: '$' },
-        { value: '¢' }, { value: '\\' }, { value: '=' },
+        { value: '`' }, { value: '^' }, { value: '±' },
+        { value: '=' }, { value: '§' }, { value: '¿'}, {value: '¡'},
         { value: '⌫', ratio: 1.5, keyCode: KeyEvent.DOM_VK_BACK_SPACE }
       ], [
         { value: '&nbsp', ratio: 8, keyCode: KeyboardEvent.DOM_VK_SPACE },
@@ -320,21 +321,16 @@ Keyboards.latex = {
         { value: '<math><mo>∲</mo></math>', compositeKey: '\\ointclockwise', className: 'math' },
         { value: '<math><mo>∳</mo></math>', compositeKey: '\\ointctrclockwise', className: 'math' }
     ],
-    '<math><mo>(</mo></math>': [
-        { value: '<math><mo>[</mo></math>', compositeKey: '[', className: 'math' },
-        { value: '<math><mo>{</mo></math>', compositeKey: '\\{', className: 'math' },
-        { value: '<math><mo>⟨</mo></math>', compositeKey: '\\langle', className: 'math' },
-        { value: '<math><mo>⟪</mo></math>', compositeKey: '\\lang', className: 'math' },
-        { value: '<math><mo>⌈</mo></math>', compositeKey: '\\lceil', className: 'math' },
-        { value: '<math><mo>⌊</mo></math>', compositeKey: '\\lfloor', className: 'math' }
+    '<math><mo>∑</mo></math>': [
+        { value: '<math><mo>∏</mo></math>', compositeKey: '\\prod', className: 'math' },
     ],
-    '<math><mo>)</mo></math>': [
-        { value: '<math><mo>]</mo></math>', compositeKey: ']', className: 'math' },
-        { value: '<math><mo>}</mo></math>', compositeKey: '\\}', className: 'math' },
-        { value: '<math><mo>⟩</mo></math>', compositeKey: '\\rangle', className: 'math' },
-        { value: '<math><mo>⟫</mo></math>', compositeKey: '\\rang', className: 'math' },
-        { value: '<math><mo>⌉</mo></math>', compositeKey: '\\rceil', className: 'math' },
-        { value: '<math><mo>⌋</mo></math>', compositeKey: '\\rfloor', className: 'math' }
+    '<math><mo>(</mo><mi>x</mi><mo>)</mo></math>': [
+        { value: '<math><mo>[</mo><mi>x</mi><mo>]</mo></math>', compositeKey: '[]', className: 'math' },
+        { value: '<math><mo>{</mo><mi>x</mi><mo>}</mo></math>', compositeKey: '\\{\\}', className: 'math' },
+        { value: '<math><mo>⟨</mo><mi>x</mi><mo>⟩</mo></math>', compositeKey: '\\langle\\rangle', className: 'math' },
+        { value: '<math><mo>⟪</mo><mi>x</mi><mo>⟫</mo></math>', compositeKey: '\\lang\\rang', className: 'math' },
+        { value: '<math><mo>⌈</mo><mi>x</mi><mo>⌉</mo></math>', compositeKey: '\\lceil\\rceil', className: 'math' },
+        { value: '<math><mo>⌊</mo><mi>x</mi><mo>⌋</mo></math>', compositeKey: '\\lfloor\\rfloor', className: 'math' }
     ],
     '<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></math>': [
         { value: '<math><mfenced open="(" close=")"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
@@ -360,17 +356,28 @@ Keyboards.latex = {
         { value: '<math><mover><mi>x</mi><mo>˳</mo></mover></math>', compositeKey: '\\mathring{x}', className: 'math' },
         { value: '<math><mover><mi>x</mi><mo>˙</mo></mover></math>', compositeKey: '\\dot{x}', className: 'math' },
         { value: '<math><mover><mi>x</mi><mo>˙˙</mo></mover></math>', compositeKey: '\\ddot{x}', className: 'math' },
-        { value: '<math><mover><mi>x</mi><mo>→</mo></mover></math>', compositeKey: '\\vec{x}', className: 'math' },
+        { value: '<math><mover><mi>x</mi><mo>→</mo></mover></math>', compositeKey: '\\vec{x}', className: 'math' }
     ],
-    '<math><mo>ℕ</mo></math>': [
-        { value: '<math><mo>ℤ</mo></math>', compositeKey: '\\mathbb{Z}', className: 'math' },
-        { value: '<math><mo>ℚ</mo></math>', compositeKey: '\\mathbb{Q}', className: 'math' },
-        { value: '<math><mo>ℝ</mo></math>', compositeKey: '\\mathbb{R}', className: 'math' },
-        { value: '<math><mo>ℂ</mo></math>', compositeKey: '\\mathbb{C}', className: 'math' },
-        { value: '<math><mo>ℙ</mo></math>', compositeKey: '\\mathbb{P}', className: 'math' },
-        { value: '<math><mo>ℍ</mo></math>', compositeKey: '\\mathbb{H}', className: 'math' },
-        { value: '<math><mo>ℜ</mo></math>', compositeKey: '\\Re', className: 'math' },
-        { value: '<math><mo>ℑ</mo></math>', compositeKey: '\\Im', className: 'math' }
+    '<math><mo>∪</mo></math>': [
+      { value: '<math><mo>∩</mo></math>', compositeKey: '\\cap', className: 'math' },
+      { value: '<math><mo>∨</mo></math>', compositeKey: '\\vee', className: 'math' },
+      { value: '<math><mo>∧</mo></math>', compositeKey: '\\wedge', className: 'math' }
+    ],
+    '<math><mo>∃</mo></math>': [
+      { value: '<math><mo>∄</mo></math>', compositeKey: '\\nexists', className: 'math' },
+      { value: '<math><mo>∀</mo></math>', compositeKey: '\\forall', className: 'math' },
+      { value: '<math><mo>∁</mo></math>', compositeKey: '\\complement', className: 'math' },
+      { value: '<math><mo>∅</mo></math>', compositeKey: '\\vernothing', className: 'math' },
+      { value: '<math><mo>∞</mo></math>', compositeKey: '\\infty', className: 'math' },
+    ],
+    '<math><mo>⊂</mo></math>': [
+      { value: '<math><mo>⊃</mo></math>', compositeKey: '\\supset', className: 'math' },
+      { value: '<math><mo>⊄</mo></math>', compositeKey: '\\nsubset', className: 'math' },
+      { value: '<math><mo>⊅</mo></math>', compositeKey: '\\nsupset', className: 'math' },
+      { value: '<math><mo>⊆</mo></math>', compositeKey: '\\subseteq', className: 'math' },
+      { value: '<math><mo>⊇</mo></math>', compositeKey: '\\supseteq', className: 'math' },
+      { value: '<math><mo>⊈</mo></math>', compositeKey: '\\nsubseteq', className: 'math' },
+      { value: '<math><mo>⊉</mo></math>', compositeKey: '\\nsupseteq', className: 'math' },
     ],
     '<math><mo>←</mo></math>': [
         { value: '<math><mo>↚</mo></math>', compositeKey: '\\nleftarrow', className: 'math' },
@@ -412,10 +419,10 @@ Keyboards.latex = {
     ], [
       { value: '<math><munder><mi>x</mi><mi>y</mi></munder></math>', compositeKey: '\\underset{}{}', className: 'math' },
       { value: '<math><mo>∫</mo></math>', compositeKey: '\\int', className: 'math' },
-      { value: '<math><mo>(</mo></math>', compositeKey: '\\left(', className: 'math' },
-      { value: '<math><mo>)</mo></math>', compositeKey: '\\right)', className: 'math' },
       { value: '<math><mo>∂</mo></math>', compositeKey: '\\partial', className: 'math' },
       { value: '<math><mo>∇</mo></math>', compositeKey: '\\nabla', className: 'math' },
+      { value: '<math><mo>∑</mo></math>', compositeKey: '\\sum', className: 'math' },
+      { value: '<math><mo>(</mo><mi>x</mi><mo>)</mo></math>', compositeKey: '\\left(\\right)', className: 'math' },
       { value: '<math><mo>+</mo></math>', compositeKey: '+', className: 'math' },
       { value: '<math><mo>-</mo></math>', compositeKey: '-', className: 'math' },
       { value: '<math><munderover><mi>x</mi><mi>y</mi><mi>z</mi></munderover></math>', compositeKey: '\\underset{}{\\overset{}{}}', className: 'math' },
@@ -423,9 +430,9 @@ Keyboards.latex = {
     ], [
       { value: '<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></math>', compositeKey: '\\begin{matrix}\\end{matrix}', ratio: 1.5, className: 'math' },
       { value: '<math><mover><mi>x</mi><mo>^</mo></mover></math>', compositeKey: '\\hat{}', className: 'math' },
-      { value: '<math><mo>ℕ</mo></math>', compositeKey: '\\mathbb{N}', className: 'math' },
-      { value: '<math><mo>∏</mo></math>', compositeKey: '\\prod', className: 'math' },
-      { value: '<math><mo>∑</mo></math>', compositeKey: '\\sum', className: 'math' },
+      { value: '<math><mo>∪</mo></math>', compositeKey: '\\cup', className: 'math' },
+      { value: '<math><mo>∃</mo></math>', compositeKey: '\\exists', className: 'math' },
+      { value: '<math><mo>⊂</mo></math>', compositeKey: '\\subset', className: 'math' },
       { value: '<math><mo>←</mo></math>', compositeKey: '\\leftarrow', className: 'math' },
       { value: '<math><mo>↔</mo></math>', compositeKey: '\\leftrightarrow', className: 'math' },
       { value: '<math><mo>→</mo></math>', compositeKey: '\\rightarrow', className: 'math' },
