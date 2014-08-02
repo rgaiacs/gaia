@@ -341,17 +341,17 @@ Keyboards.latex = {
     ],
     '<math><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></math>': [
         { value: '<math><mfenced open="(" close=")"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{pmatrix}\\end{pmatrix}', className: 'math' },
+            compositeKey: '\\begin{pmatrix}\\end{pmatrix}', ratio: 2, className: 'math' },
         { value: '<math><mfenced open="[" close="]"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{bmatrix}\\end{bmatrix}', className: 'math' },
+            compositeKey: '\\begin{bmatrix}\\end{bmatrix}', ratio: 2, className: 'math' },
         { value: '<math><mfenced open="{" close="}"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{Bmatrix}\\end{Bmatrix}', className: 'math' },
+            compositeKey: '\\begin{Bmatrix}\\end{Bmatrix}', ratio: 2, className: 'math' },
         { value: '<math><mfenced open="|" close="|"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{vmatrix}\\end{vmatrix}', className: 'math' },
+            compositeKey: '\\begin{vmatrix}\\end{vmatrix}', ratio: 2, className: 'math' },
         { value: '<math><mfenced open="‖" close="‖"><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{Vmatrix}\\end{Vmatrix}', className: 'math' },
+            compositeKey: '\\begin{Vmatrix}\\end{Vmatrix}', ratio: 2, className: 'math' },
         { value: '<math><mfenced open="{" close=""><mtable><mtr><mtd><mi>a</mi></mtd><mtd><mi>b</mi></mtd></mtr></mtable></mfenced></math>',
-            compositeKey: '\\begin{cases}\\end{cases}', className: 'math' }
+            compositeKey: '\\begin{cases}\\end{cases}', ratio: 2, className: 'math' }
     ],
     '<math><mover><mi>x</mi><mo>^</mo></mover></math>': [
         { value: '<math><mover><mi>x</mi><mo>ˇ</mo></mover></math>', compositeKey: '\\check{}', className: 'math' },
